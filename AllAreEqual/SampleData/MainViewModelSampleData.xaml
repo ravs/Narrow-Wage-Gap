@@ -1,0 +1,38 @@
+﻿<local:MainViewModel 
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"       
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="clr-namespace:AllAreEqual" 
+    SampleProperty="Sample Text Property Value">
+    
+    <local:MainViewModel.Items>
+        <local:ItemViewModel LineOne="design one" LineTwo="Maecenas praesent accumsan bibendum" LineThree="Maecenas praesent accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur"/>
+        <local:ItemViewModel LineOne="design two" LineTwo="Dictumst eleifend facilisi faucibus" LineThree="Pharetra placerat pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent"/>
+        <local:ItemViewModel LineOne="design three" LineTwo="Habitant inceptos interdum lobortis" LineThree="Accumsan bibendum dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat"/>
+        <local:ItemViewModel LineOne="design four" LineTwo="Nascetur pharetra placerat pulvinar" LineThree="Pulvinar sagittis senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum"/>
+        <local:ItemViewModel LineOne="design five" LineTwo="Sagittis senectus sociosqu suscipit" LineThree="Dictumst eleifend facilisi faucibus habitant inceptos interdum lobortis nascetur pharetra placerat pulvinar sagittis"/>
+        <local:ItemViewModel LineOne="design six" LineTwo="Torquent ultrices vehicula volutpat" LineThree="Senectus sociosqu suscipit torquent ultrices vehicula volutpat maecenas praesent accumsan bibendum dictumst eleifend"/>
+    </local:MainViewModel.Items>
+
+    <local:MainViewModel.Items1>
+        <local:ItemViewModel LineOne = "Make the first move" 
+                             LineTwo = "Take charge of making sure you're paid fairly and initiate the negotiation. Men are about four times more likely than women to negotiate, which helps ensure that they usually earn more money. So level the playing field and ask for what you want." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Boost your bargaining power" 
+                             LineTwo = "Your leverage in a negotiation comes from how valuable you are to your organization and how difficult it would be to replace you. Take steps to make yourself as valuable as possible and to make this value visible to your boss." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Do your homework" 
+                             LineTwo = "When it comes to negotiating, information is power, so invest the time in doing some research." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Get inside their heads" 
+                             LineTwo = "Find out as much as you can about the people with whom you will be negotiating and how they see the situation." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Aim high" 
+                             LineTwo = "Negotiators who set higher targets do better and women typically set unnecessarily low targets—and get less as a result." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Ask for more than you want" 
+                             LineTwo = "Negotiation typically involves a back-and forth discussion. Leave yourself enough wiggle room between what you ask for and what you want so that you can make some concessions and still achieve your target." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Pay attention to how you ask" 
+                             LineTwo = "People often push back when a woman takes an approach that seems too aggressive." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Time it right" 
+                             LineTwo = "Some times of the year are better than others to ask for a raise." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Practice, practice, practice" 
+                             LineTwo = "Many women feel anxious about negotiating; rehearsing ahead of time can help calm your nerves." LineThree = ""/>
+        <local:ItemViewModel LineOne = "Get yourself psyched up" 
+                             LineTwo = "Positive moods are contagious and stimulate greater cooperation and creativity." LineThree = ""/>
+    </local:MainViewModel.Items1>
+</local:MainViewModel>

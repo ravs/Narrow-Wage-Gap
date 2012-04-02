@@ -1,0 +1,123 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AllAreEqual.MainPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+    mc:Ignorable="d" d:DesignWidth="480" d:DesignHeight="728" 
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait"  Orientation="Portrait"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="Transparent">
+
+        <!--Panorama control-->
+        <controls:Panorama Title="Narrow Wage Gap" Foreground="Black" FontFamily="Segoe WP Bold" Margin="0">
+            <controls:Panorama.Background>
+                <ImageBrush ImageSource="/AllAreEqual;component/Images/EqualPay_Flag.png"/>
+            </controls:Panorama.Background>
+
+            <!--Panorama item one-->
+            <controls:PanoramaItem Header="U.S. DoL">
+                <ScrollViewer>
+                    <StackPanel Margin="10,0,-12,0" Background="Transparent" Orientation="Vertical">
+                        <StackPanel Margin="0,0,0,0" Orientation="Horizontal" Name="dolStats" Tap="dolStats_Tap" >
+                            <TextBlock Text="Wage estimates" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/wmp.png" Height="60" Margin="38,0,0,0"></Image>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Name="epAct" Tap="epAct_Tap" >
+                            <TextBlock Text="Equal Pay Act" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/ie.png" Height="60" Margin="77,0,0,0"></Image>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Name="womansBureau" Tap="womansBureau_Tap" >
+                            <TextBlock Text="Woman's Bureau" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/ie.png" Height="60" Margin="22,0,0,0"></Image>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Name="upcomingEvents" Tap="upcomingEvents_Tap" >
+                            <TextBlock Text="Events" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/ie.png" Height="60" Margin="204,0,0,0"></Image>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Name="dolNews" Tap="dolNews_Tap" >
+                            <TextBlock Text="News" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/rss.png" Height="60" Margin="220,0,0,0"></Image>
+                        </StackPanel>
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Name="subscribe" Tap="subscribe_Tap" >
+                            <TextBlock Text="Subscribe" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/outlook.png" Height="60" Margin="146,0,0,0"></Image>
+                        </StackPanel>
+                    </StackPanel>
+                </ScrollViewer>
+            </controls:PanoramaItem>
+
+            <!--Panorama item two-->
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <controls:PanoramaItem Header="negotiate">
+                <StackPanel Background="Transparent" Orientation="Vertical">
+                    <StackPanel Orientation="Horizontal" Name="NegotiationTip" Tap="NegotiationTip_Tap" Background="IndianRed">
+                        <TextBlock Text="Negotiation tips" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                        <Image Source="/AllAreEqual;component/Images/light.png" Height="60" Margin="45,0,0,0"></Image>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" Name="NegotiateAndExpand" Tap="NegotiateAndExpand_Tap">
+                        <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Background="DarkSeaGreen">
+                            <TextBlock Text="Negotiate+expand" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                            <Image Source="/AllAreEqual;component/Images/calc.png" Height="60" Margin="-7,0,0,0"></Image>
+                        </StackPanel>
+                        <TextBlock Text="Pay gap COMPOUNDS! so start negotiating and expand your long-term earnings." TextWrapping="Wrap" Style="{StaticResource PhoneTextSubtleStyle}" Foreground="Black" Width="400" Padding="22,0,0,0" FontFamily="Segoe WP" />
+                    </StackPanel>
+                </StackPanel>
+            </controls:PanoramaItem>
+
+            <!--Panorama item three-->
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <controls:PanoramaItem Header="theDailyMuse" >
+                <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,0,12,0">
+                    <StackPanel Orientation="Vertical">
+                        <StackPanel Name="DailyMuseRss" Orientation="Horizontal" Height="60" Background="Peru" Tap="DailyMuseRss_Tap">
+                            <TextBlock Text="Jobs, Career Advice and Community for Professional Women" TextWrapping="Wrap" Padding="7,0,0,0" Height="44" Width="339"></TextBlock>
+                            <Image Source="/AllAreEqual;component/Images/rss.png" Height="60"></Image>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </controls:PanoramaItem>
+            
+            <!--Panorama item four-->
+            <!--Use 'Orientation="Horizontal"' to enable a panel that lays out horizontally-->
+            <controls:PanoramaItem Header="do more..">
+                <StackPanel Margin="0,1,0,0" Background="Transparent" Orientation="Vertical">
+                    <StackPanel Margin="0,0,0,0" Orientation="Horizontal" Name="epday" Background="Indigo" Tap="epday_Tap">
+                        <!--<Image Source="Images/preview.png" Margin="0,3,0,0"></Image>-->
+                        <TextBlock Text="Equal Pay Day" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                        <Image Source="/AllAreEqual;component/Images/calend.png" Margin="77,0,0,0" Height="60" ></Image>
+                    </StackPanel>
+                    <StackPanel Margin="0,10,0,0" Orientation="Horizontal" Name="Books" Tap="Books_Tap" Background="DarkOrange">
+                        <!--<Image Source="Images/preview.png" Margin="0,3,0,0"></Image>-->
+                        <TextBlock Text="Books + PDFs" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                        <Image Source="/AllAreEqual;component/Images/acr.png" Margin="82,0,0,0" Height="60"></Image>
+                    </StackPanel>
+                    <StackPanel Margin="0,10,0,0" Name="websites" Orientation="Horizontal" Tap="websites_Tap" Background="Crimson">
+                        <!--<Image Source="Images/preview.png" Margin="0,3,0,0"></Image>-->
+                        <TextBlock Text="Socialize" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" Foreground="Black" />
+                        <Image Source="/AllAreEqual;component/Images/ie.png" Margin="175,0,0,0" Height="60"></Image>
+                    </StackPanel>
+                </StackPanel>
+            </controls:PanoramaItem>
+
+        </controls:Panorama>
+    </Grid>
+
+    <phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="Sources" Click="appBar_Sources"/>
+                <shell:ApplicationBarMenuItem Text="About" Click="appBar_About"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>
+</phone:PhoneApplicationPage>

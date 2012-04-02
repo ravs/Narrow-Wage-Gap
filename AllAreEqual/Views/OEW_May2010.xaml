@@ -1,0 +1,284 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AllAreEqual.Views.OEW_May2010"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:controls="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF122836">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Wage estimates" Style="{StaticResource PhoneTextNormalStyle}" FontSize="26" FontFamily="Segoe WP Bold" Foreground="Tomato" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+                <StackPanel Orientation="Vertical">
+
+                    <StackPanel Orientation="Vertical">
+                        <TextBlock Text="National Occupational Employment and Wage Estimates, May 2010" TextWrapping="Wrap"></TextBlock>
+                        <TextBlock Name="textBlock1" Text="Select major occupational group:" TextWrapping="Wrap" Foreground="PaleVioletRed" />
+                        <toolkit:ListPicker Header="Major Occupational Group" Grid.Row="1" x:Name="occ_title" FullModeHeader="Major Occupational Groups" SelectionChanged="occ_title_SelectionChanged" FontSize="24" FontFamily="Segoe WP Light" Foreground="PaleVioletRed" >
+                            <toolkit:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding OCC_TITLE}" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </toolkit:ListPicker.ItemTemplate>
+                        </toolkit:ListPicker>
+                        <Path Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" VerticalAlignment="Bottom"/>
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- occ_code -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Occupation Code" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="occ_code" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- Employment, TOT_EMP -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Employment #" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="tot_tmp" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- Mean Hourly Wage, H_MEAN -->
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Mean Hourly Wage" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Name="h_mean" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+
+                            <!-- Mean Annual Wage, A_MEAN -->
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Mean Annual Wage" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="a_mean" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                        <Path Margin="0,24,0,18" Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" />
+                        <TextBlock Text="Percentile Wage:" Margin="12,-10,0,0" Foreground="Silver"></TextBlock>
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- hourly 10th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hourly (10%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="h_pct10" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- annual 10th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Annual (10%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="a_pct10" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- hourly 25th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Hourly (25%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Name="h_pct25" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+
+                            <!--annual 25th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Annual (25%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="a_pct25" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                        <Path Margin="0,24,0,18" Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" />
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- hourly median/50th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hourly (Median/50%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="h_median" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- annual median/50th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Annual (Median/50%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="a_median" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                        <Path Margin="0,24,0,18" Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" />
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- hourly 75th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hourly (75%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="h_pct75" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- annual 75th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Annual (75%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="a_pct75" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- hourly 90th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Hourly (90%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Name="h_pct90" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+
+                            <!--annual 90th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Annual (90%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="a_pct90" Text="" Foreground="PaleVioletRed" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                    </StackPanel>
+
+                    <StackPanel Name="SubGroup" Orientation="Vertical" Visibility="Collapsed">
+                        <Path Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" VerticalAlignment="Bottom"/>
+                        <TextBlock Name="textBlock2" Text="Select occupation:" TextWrapping="Wrap" Foreground="MediumOrchid" Margin="0,20,0,0" />
+                        <toolkit:ListPicker Header="Occupation Title" Grid.Row="1" x:Name="occ_titleSubGroup" FullModeHeader="Occupation Title" SelectionChanged="occ_titleSubGroup_SelectionChanged" FontSize="24" FontFamily="Segoe WP Light" Foreground="MediumOrchid" >
+                            <toolkit:ListPicker.ItemTemplate>
+                                <DataTemplate>
+                                    <TextBlock Text="{Binding OCC_TITLE}" TextWrapping="Wrap" />
+                                </DataTemplate>
+                            </toolkit:ListPicker.ItemTemplate>
+                        </toolkit:ListPicker>
+                        <Path Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" VerticalAlignment="Bottom"/>
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- occ_code -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Occupation Code" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="occ_codeSub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- Employment, TOT_EMP -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Employment #" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="tot_tmpSub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- Mean Hourly Wage, H_MEAN -->
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Mean Hourly Wage" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Name="h_meanSub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+
+                            <!-- Mean Annual Wage, A_MEAN -->
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Mean Annual Wage" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="a_meanSub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                        <Path Margin="0,24,0,18" Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" />
+                        <TextBlock Text="Percentile Wage:" Margin="12,-10,0,0" Foreground="Silver"></TextBlock>
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- hourly 10th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hourly (10%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="h_pct10Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- annual 10th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Annual (10%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="a_pct10Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- hourly 25th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Hourly (25%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Name="h_pct25Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+
+                            <!--annual 25th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Annual (25%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="a_pct25Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                        <Path Margin="0,24,0,18" Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" />
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- hourly median/50th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hourly (Median/50%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="h_medianSub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- annual median/50th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Annual (Median/50%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="a_medianSub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                        <Path Margin="0,24,0,18" Data="M0,0 L432,0" Width="432" Height="1" Stretch="None" Stroke="{StaticResource PhoneForegroundBrush}" StrokeThickness="1" StrokeDashArray="1 1" UseLayoutRounding="True" />
+                        <Grid Margin="12,0">
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+
+                            <!-- hourly 75th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="0" Text="Hourly (75%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="1" Name="h_pct75Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- annual 75th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="0" Text="Annual (75%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="1" Name="a_pct75Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+                            <!-- hourly 90th percentile -->
+                            <TextBlock Grid.Column="0" Grid.Row="2" Text="Hourly (90%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="0" Grid.Row="3" Name="h_pct90Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+
+
+                            <!--annual 90th percentile -->
+                            <TextBlock Grid.Column="1" Grid.Row="2" Text="Annual (90%)" Margin="0,24,0,-5" Foreground="Silver" />
+                            <TextBlock Grid.Column="1" Grid.Row="3" Name="a_pct90Sub" Text="" Foreground="MediumOrchid" FontSize="28" FontFamily="{StaticResource PhoneFontFamilySemiLight}" />
+                        </Grid>
+                    </StackPanel>
+
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

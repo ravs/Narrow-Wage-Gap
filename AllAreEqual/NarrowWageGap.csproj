@@ -1,0 +1,261 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProductVersion>10.0.20506</ProductVersion>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>{D88AB2A8-07B2-4262-95AC-C802DC171867}</ProjectGuid>
+    <ProjectTypeGuids>{C089C8C0-30E0-4E22-80C0-CE093F111A43};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
+    <OutputType>Library</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>AllAreEqual</RootNamespace>
+    <AssemblyName>AllAreEqual</AssemblyName>
+    <TargetFrameworkVersion>v4.0</TargetFrameworkVersion>
+    <SilverlightVersion>$(TargetFrameworkVersion)</SilverlightVersion>
+    <TargetFrameworkProfile>WindowsPhone71</TargetFrameworkProfile>
+    <TargetFrameworkIdentifier>Silverlight</TargetFrameworkIdentifier>
+    <SilverlightApplication>true</SilverlightApplication>
+    <SupportedCultures>
+    </SupportedCultures>
+    <XapOutputs>true</XapOutputs>
+    <GenerateSilverlightManifest>true</GenerateSilverlightManifest>
+    <XapFilename>AllAreEqual.xap</XapFilename>
+    <SilverlightManifestTemplate>Properties\AppManifest.xml</SilverlightManifestTemplate>
+    <SilverlightAppEntry>AllAreEqual.App</SilverlightAppEntry>
+    <ValidateXaml>true</ValidateXaml>
+    <ThrowErrorsInValidation>true</ThrowErrorsInValidation>
+    <Utf8Output>true</Utf8Output>
+    <ExpressionBlendVersion>4.0.30816.0</ExpressionBlendVersion>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>Bin\Debug</OutputPath>
+    <DefineConstants>DEBUG;TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>Bin\Release</OutputPath>
+    <DefineConstants>TRACE;SILVERLIGHT;WINDOWS_PHONE</DefineConstants>
+    <NoStdLib>true</NoStdLib>
+    <NoConfig>true</NoConfig>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Microsoft.Phone" />
+    <Reference Include="Microsoft.Phone.Controls" />
+    <Reference Include="Microsoft.Phone.Controls.Toolkit">
+      <HintPath>..\..\..\..\..\..\..\MangoRTMTK_Advanced\Labs\TodoSQL\Toolkit\Microsoft.Phone.Controls.Toolkit.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Phone.Interop" />
+    <Reference Include="System.ServiceModel.Syndication">
+      <HintPath>..\..\..\..\WindowPhones\Samples\sdkRSSReaderCS\sdkRSSReaderCS\Bin\Debug\System.ServiceModel.Syndication.dll</HintPath>
+    </Reference>
+    <Reference Include="System.Windows" />
+    <Reference Include="system" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Net" />
+    <Reference Include="System.Xml" />
+    <Reference Include="mscorlib.extensions" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainPage.xaml.cs">
+      <DependentUpon>MainPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RssTextTrimmer.cs" />
+    <Compile Include="TipIndexPage.xaml.cs">
+      <DependentUpon>TipIndexPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ViewModels\ItemViewModel.cs" />
+    <Compile Include="ViewModels\MainViewModel.cs" />
+    <Compile Include="Views\Books.xaml.cs">
+      <DependentUpon>Books.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\equalPayDay.xaml.cs">
+      <DependentUpon>equalPayDay.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiateAndExpand.xaml.cs">
+      <DependentUpon>NegotiateAndExpand.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage.xaml.cs">
+      <DependentUpon>NegotiatePage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage1.xaml.cs">
+      <DependentUpon>NegotiatePage1.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage2.xaml.cs">
+      <DependentUpon>NegotiatePage2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage3.xaml.cs">
+      <DependentUpon>NegotiatePage3.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage4.xaml.cs">
+      <DependentUpon>NegotiatePage4.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage5.xaml.cs">
+      <DependentUpon>NegotiatePage5.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage6.xaml.cs">
+      <DependentUpon>NegotiatePage6.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage7.xaml.cs">
+      <DependentUpon>NegotiatePage7.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage8.xaml.cs">
+      <DependentUpon>NegotiatePage8.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\NegotiatePage9.xaml.cs">
+      <DependentUpon>NegotiatePage9.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\OEW_May2010.xaml.cs">
+      <DependentUpon>OEW_May2010.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\RssFeedPage.xaml.cs">
+      <DependentUpon>RssFeedPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Views\Socialize.xaml.cs">
+      <DependentUpon>Socialize.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </ApplicationDefinition>
+    <Page Include="MainPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <DesignData Include="SampleData\MainViewModelSampleData.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </DesignData>
+    <Page Include="TipIndexPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Views\Books.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\equalPayDay.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiateAndExpand.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage1.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage3.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage4.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage5.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage6.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage7.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage8.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\NegotiatePage9.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\OEW_May2010.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\RssFeedPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Views\Socialize.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Properties\AppManifest.xml" />
+    <None Include="Properties\WMAppManifest.xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Background.png">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Images\ie.png" />
+    <Resource Include="Images\wmp.png" />
+    <Resource Include="Images\outlook.png" />
+    <Resource Include="Images\light.png" />
+    <Resource Include="Images\calc.png" />
+    <Resource Include="ApplicationIcon.png" />
+    <Content Include="Toolkit.Content\ApplicationBar.Cancel.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Content Include="Toolkit.Content\ApplicationBar.Check.png">
+      <CopyToOutputDirectory>Always</CopyToOutputDirectory>
+    </Content>
+    <Resource Include="Views\wda_125.png" />
+    <Resource Include="Views\ev_murphy_soundcloud.png" />
+    <Resource Include="PanoramaBackground.png" />
+    <Resource Include="Images\preview.png" />
+    <Resource Include="Images\Low.png" />
+    <Resource Include="Images\Ask for it paperback cov.png" />
+    <Resource Include="Images\Ask For It.png" />
+    <Resource Include="Images\Why Women Don%27t Ask.png" />
+    <Resource Include="Images\EqualPay_Flag.png" />
+    <Resource Include="Images\book.png" />
+    <Resource Include="Images\attachment.note.png" />
+    <Resource Include="Images\calend.png" />
+    <Resource Include="Images\acr.png" />
+    <Resource Include="Images\rss.png" />
+    <Resource Include="Images\netwo.png" />
+    <Content Include="SplashScreenImage.jpg" />
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.$(TargetFrameworkProfile).Overrides.targets" />
+  <Import Project="$(MSBuildExtensionsPath)\Microsoft\Silverlight for Phone\$(TargetFrameworkVersion)\Microsoft.Silverlight.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+  <ProjectExtensions />
+</Project>

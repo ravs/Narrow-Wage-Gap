@@ -1,0 +1,86 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AllAreEqual.Views.equalPayDay"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF122836">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Equal Pay Day" Style="{StaticResource PhoneTextNormalStyle}" FontSize="26" FontFamily="Segoe WP Bold" Foreground="Tomato" TextWrapping="Wrap" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="0,30,10,0">
+            <Grid HorizontalAlignment="Left" VerticalAlignment="Top">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="150" />
+                </Grid.RowDefinitions>
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="160" />
+                    <ColumnDefinition Width="160" />
+                </Grid.ColumnDefinitions>
+                <StackPanel Grid.Row="0" Width="150" Grid.Column="0" Orientation="Vertical" Background="Orange" Margin="10,0,0,0">
+                    <TextBlock Text="04" FontSize="64" Margin="-15,35,0,0" Width="112" Foreground="Black" TextWrapping="Wrap" FontFamily="Segoe WP Semibold" Height="73"></TextBlock>
+                    <TextBlock Text="April" FontSize="24" Margin="-15,0,0,0" Width="112" Foreground="Black" TextWrapping="Wrap" FontFamily="Segoe WP Bold" Height="39"></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Width="150" Grid.Column="1" Orientation="Vertical" Background="Orange" Margin="10,0,0,0">
+                    <TextBlock Text="" Name="epdDate" FontSize="64" Margin="-15,35,0,0" Width="112" Foreground="Black" TextWrapping="Wrap" FontFamily="Segoe WP Semibold" Height="73"></TextBlock>
+                    <TextBlock Text="Tuesday" FontSize="24" Margin="-15,0,0,0" Width="112" Foreground="Black" TextWrapping="Wrap" FontFamily="Segoe WP Bold" Height="39"></TextBlock>
+                </StackPanel>
+                <StackPanel Grid.Row="0" Width="150" Grid.Column="2" Orientation="Vertical" Background="Orange" Margin="10,0,0,0">
+                    <TextBlock Text="" Name="epdYear" FontSize="64" Margin="4,35,0,0" Width="145" Foreground="Black" TextWrapping="Wrap" FontFamily="Segoe WP Semibold" Height="73"></TextBlock>
+                </StackPanel>
+            </Grid>
+        </Grid>
+        <StackPanel Grid.Row="2" Margin="0,200,0,0">
+            <TextBlock Text="Add Reminder" Margin="12,0,0,-5" />
+            <toolkit:ToggleSwitch x:Name="ReminderToggleSwitch" Width="480" Margin="0,-24,-12,-24" Checked="ReminderToggleSwitch_Checked" Unchecked="ReminderToggleSwitch_Unchecked" Content="Hide" />
+        </StackPanel>
+        <StackPanel Grid.Row="3" Name="ReminderStackPanel" Margin="0,280,0,0" Visibility="Collapsed">
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,0,0,-5" Name="beginTimeLabel" Text="begin time" VerticalAlignment="Top" />
+            <StackPanel Orientation="Horizontal">
+                <toolkit:DatePicker x:Name="beginDatePicker" Width="220" HorizontalAlignment="Left" IsEnabled="False" Visibility="Collapsed"></toolkit:DatePicker>
+                <toolkit:TimePicker x:Name="beginTimePicker"  Width="220" HorizontalAlignment="Right"></toolkit:TimePicker>
+            </StackPanel>
+            <TextBlock Height="30" HorizontalAlignment="Left" Margin="12,0,0,-5" Name="expirationTimeLabel" Text="expiration time" VerticalAlignment="Top" />
+            <StackPanel Orientation="Horizontal">
+                <toolkit:DatePicker x:Name="expirationDatePicker" Width="220" HorizontalAlignment="Left" IsEnabled="False" Visibility="Collapsed"></toolkit:DatePicker>
+                <toolkit:TimePicker x:Name="expirationTimePicker" Width="220" HorizontalAlignment="Right"></toolkit:TimePicker>
+            </StackPanel>
+            <CheckBox Content="change date" Name="changeDate" IsChecked="False" Checked="changeDate_Checked" Unchecked="changeDate_Unchecked"></CheckBox>
+            <Button Height="80" Name="addReminder" Content="Add Reminder" VerticalAlignment="Center" Click="addReminder_Click" ></Button>
+            <Button Height="80" Name="removeReminder" Content="Remove Reminder" VerticalAlignment="Center" Click="removeReminder_Click" ></Button>
+        </StackPanel>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

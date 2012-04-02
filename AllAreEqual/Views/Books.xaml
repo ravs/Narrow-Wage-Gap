@@ -1,0 +1,118 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AllAreEqual.Views.Books"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF122836">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Books and PDFs" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="Segoe WP Bold" FontSize="32" Foreground="Tomato" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+            <StackPanel Margin="0,0,-12,0" Background="Transparent" Orientation="Vertical">
+                <!--Book #1 -->
+                <StackPanel Orientation="Vertical">
+                    <TextBlock Text="Getting Even: Why Women Don't Get Paid Like Men--And What to Do About It" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="28" FontFamily="Segoe WP Bold" Tap="Book1_preview_Tap" />
+                    <StackPanel Margin="0,0,-12,0" Orientation="Horizontal" Height="125">
+                        <Image Source="/AllAreEqual;component/Views/ev_murphy_soundcloud.png" Margin="14,0,0,0"></Image>
+                        <TextBlock Text="Author: " Margin="80,10,0,0"></TextBlock>
+                        <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                            <TextBlock Text="Evelyn Murphy" TextDecorations="Underline" Name="evelyn" Tap="evelyn_Tap" FontSize="22"></TextBlock>
+                            <TextBlock Text="E.J. Graff" Margin="0,20,0,0" FontSize="22"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <!--PDF #1 -->
+                <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                    <TextBlock Name="pdf1" Text="The Simple Truth about the Gender Pay Gap" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="28" FontFamily="Segoe WP Bold" Tap="pdf1_Tap" />
+                    <StackPanel Margin="0,0,-12,0" Orientation="Horizontal" Height="125">
+                            <Image Source="/AllAreEqual;component/Images/acr.png" Margin="14,0,0,0"></Image>
+                            <TextBlock Text="by: " Margin="30,0,0,0"></TextBlock>
+                            <TextBlock Text="American Association of University Women" TextDecorations="Underline" Name="aauw" Tap="aauw_Tap" TextWrapping="Wrap" Width="270" TextAlignment="Center" Margin="-20,0,0,0"></TextBlock>
+                    </StackPanel>
+                </StackPanel>
+                <!--Book #2 -->
+                <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                    <TextBlock Text="Women Don't Ask: The High Cost of Avoiding Negotiation--and Positive Strategies for Change" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="28" FontFamily="Segoe WP Bold" Tap="Book2_preview_Tap" />
+                    <StackPanel Margin="0,0,-12,0" Orientation="Horizontal" Height="125" >
+                        <Image Source="/AllAreEqual;component/Views/wda_125.png" Margin="14,0,0,0"></Image>
+                        <TextBlock Text="Author: " Margin="80,10,0,0"></TextBlock>
+                            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                                <TextBlock Text="Linda Babcock" TextDecorations="Underline" Name="linda" Tap="linda_Tap" FontSize="22"></TextBlock>
+                                <TextBlock Text="Sara Laschever" Margin="0,20,0,0" TextDecorations="Underline" Name="saraLashcever" Tap="saraLashcever_Tap" FontSize="22"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <!--Book #3 -->
+                    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                    <TextBlock Text="Ask For It: How Women Can Use the Power of Negotiation to Get What They Really Want" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="28" FontFamily="Segoe WP Bold" Tap="Book3_preview_Tap" />
+                    <StackPanel Margin="0,0,-12,0" Orientation="Horizontal" Height="125" >
+                        <Image Source="/AllAreEqual;component/Images/Ask%20for%20it%20paperback%20cov.png" Margin="0,0,0,0" Width="118"></Image>
+                        <TextBlock Text="Author: " Margin="80,10,0,0"></TextBlock>
+                            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                                <TextBlock Text="Linda Babcock" TextDecorations="Underline" Name="linda1" Tap="linda_Tap" FontSize="22"></TextBlock>
+                                <TextBlock Text="Sara Laschever" Margin="0,20,0,0" TextDecorations="Underline" Name="saraLashcever1" Tap="saraLashcever_Tap" FontSize="22"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                <!--Book #4 -->
+                    <StackPanel Orientation="Vertical" Margin="0,20,0,0">
+                        <TextBlock Text="Why Women Don't Ask: The high cost of avoiding negotiation - and positive strategies for change" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="28" FontFamily="Segoe WP Bold" Tap="Book4_preview_Tap" />
+                    <StackPanel Margin="0,0,-12,0" Orientation="Horizontal" Height="125" >
+                        <Image Source="/AllAreEqual;component/Images/Why%20Women%20Don%27t%20Ask.png" Margin="0,0,0,0" Width="118"></Image>
+                        <TextBlock Text="Author: " Margin="80,10,0,0"></TextBlock>
+                            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                                <TextBlock Text="Linda Babcock" TextDecorations="Underline" Name="linda2" Tap="linda_Tap" FontSize="22"></TextBlock>
+                                <TextBlock Text="Sara Laschever" Margin="0,20,0,0" TextDecorations="Underline" Name="saraLashcever2" Tap="saraLashcever_Tap" FontSize="22"></TextBlock>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+                    <!--Book #5 -->
+                    <StackPanel Orientation="Vertical" Margin="0,20,0,0" >
+                        <TextBlock Text="Ask for It: How Women Can Get What They Really Want - At Work and at Home: How Women Can Use the Power of Negotiation to Get What They Really Want" TextWrapping="Wrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontSize="28" FontFamily="Segoe WP Bold" Tap="Book5_preview_Tap" />
+                        <StackPanel Margin="0,0,-12,0" Orientation="Horizontal" Height="125" >
+                            <Image Source="/AllAreEqual;component/Images/Ask%20For%20It.png" Margin="0,0,0,0" Width="118"></Image>
+                            <TextBlock Text="Author: " Margin="80,10,0,0"></TextBlock>
+                            <StackPanel Orientation="Vertical" Margin="10,10,0,0">
+                                <TextBlock Text="Linda Babcock" TextDecorations="Underline" Name="linda3" Tap="linda_Tap" FontSize="22"></TextBlock>
+                                <TextBlock Text="Sara Laschever" Margin="0,20,0,0" TextDecorations="Underline" Name="saraLashcever3" Tap="saraLashcever_Tap" FontSize="22"></TextBlock>
+                            </StackPanel>
+                        </StackPanel>
+                    </StackPanel>
+                </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>

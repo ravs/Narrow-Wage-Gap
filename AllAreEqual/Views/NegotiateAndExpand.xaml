@@ -1,0 +1,70 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AllAreEqual.Views.NegotiateAndExpand"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:toolkit="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone.Controls.Toolkit"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    d:DataContext="{d:DesignData /SampleData/AgeDataSource/AgeDataSource.xaml}"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF122836">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Negotiate and expand" Style="{StaticResource PhoneTextNormalStyle}" FontSize="32" FontFamily="Segoe WP Bold" Foreground="Tomato" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <TextBlock Height="85" Name="textBlock1" Text="Calculate the long term benefit of the negotiation, select the following values and find out the extra amount you'd earn :" TextWrapping="Wrap" />
+                <toolkit:ListPicker Header="Increase from negotiation (in $)" Grid.Row="1" x:Name="increasePicker" ItemCountThreshold="10" FullModeHeader="Increase from negotiation" SelectedIndex="4" >
+                    <toolkit:ListPicker.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Number}" />
+                        </DataTemplate>
+                    </toolkit:ListPicker.ItemTemplate>
+                </toolkit:ListPicker>
+                <toolkit:ListPicker Header="Yearly raise (in %)" Grid.Row="1" x:Name="hikePicker" ItemCountThreshold="10" FullModeHeader="Yearly raise (in %)" SelectedIndex="3" >
+                    <toolkit:ListPicker.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Number}" />
+                        </DataTemplate>
+                    </toolkit:ListPicker.ItemTemplate>
+                </toolkit:ListPicker>
+                <toolkit:ListPicker Header="Age of retirement" Grid.Row="1" x:Name="retie_agePicker" ItemCountThreshold="10" FullModeHeader="Age of retirement" SelectedIndex="5" >
+                    <toolkit:ListPicker.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Number}" />
+                        </DataTemplate>
+                    </toolkit:ListPicker.ItemTemplate>
+                </toolkit:ListPicker>
+                <toolkit:ListPicker Header="Age when you negotiate" Grid.Row="1" x:Name="nego_agePicker" ItemCountThreshold="10" FullModeHeader="Age when you negotiate" SelectedIndex="10" >
+                    <toolkit:ListPicker.ItemTemplate>
+                        <DataTemplate>
+                            <TextBlock Text="{Binding Number}" />
+                        </DataTemplate>
+                    </toolkit:ListPicker.ItemTemplate>
+                </toolkit:ListPicker>
+                <Button Content="Calculate" Height="72" Name="button1" Width="391" Click="button1_Click" Margin="0" />
+                <TextBlock Height="77" Name="textBlock2" Text="" TextWrapping="Wrap" FontSize="26" HorizontalAlignment="Center" Foreground="Tomato" />
+            </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+
+</phone:PhoneApplicationPage>

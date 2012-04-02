@@ -1,0 +1,120 @@
+﻿<phone:PhoneApplicationPage 
+    x:Class="AllAreEqual.Views.TipIndexPage"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:phone="clr-namespace:Microsoft.Phone.Controls;assembly=Microsoft.Phone"
+    xmlns:shell="clr-namespace:Microsoft.Phone.Shell;assembly=Microsoft.Phone"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    FontFamily="{StaticResource PhoneFontFamilyNormal}"
+    FontSize="{StaticResource PhoneFontSizeNormal}"
+    Foreground="{StaticResource PhoneForegroundBrush}"
+    SupportedOrientations="Portrait" Orientation="Portrait"
+    mc:Ignorable="d" d:DesignHeight="800" d:DesignWidth="480"
+    d:DataContext="{d:DesignData SampleData/MainViewModelSampleData.xaml}"
+    shell:SystemTray.IsVisible="False">
+
+    <!--LayoutRoot is the root grid where all page content is placed-->
+    <Grid x:Name="LayoutRoot" Background="#FF122836">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="Auto"/>
+            <RowDefinition Height="*"/>
+        </Grid.RowDefinitions>
+
+        <!--TitlePanel contains the name of the application and page title-->
+        <StackPanel x:Name="TitlePanel" Grid.Row="0" Margin="12,17,0,28">
+            <TextBlock x:Name="ApplicationTitle" Text="Negotiation tips" Style="{StaticResource PhoneTextNormalStyle}" FontFamily="Segoe WP Bold" FontSize="32" Foreground="Tomato" />
+        </StackPanel>
+
+        <!--ContentPanel - place additional content here-->
+        <Grid x:Name="ContentPanel" Grid.Row="1" Margin="12,0,12,0">
+            <ScrollViewer>
+            <StackPanel Orientation="Vertical">
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip1" Tap="Tip1_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                        <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                        <TextBlock Text="Make the first move" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                    <TextBlock Text="Take charge of making sure you're paid fairly and initiate the negotiation. Men are about four times more likely than women to negotiate, which helps ensure that they usually earn more money. So level the playing field and ask for what you want." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip2" Tap="Tip2_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Boost your bargaining power" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Your leverage in a negotiation comes from how valuable you are to your organization and how difficult it would be to replace you. Take steps to make yourself as valuable as possible and to make this value visible to your boss." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip3" Tap="Tip3_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Do your homework" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="When it comes to negotiating, information is power, so invest the time in doing some research." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip4" Tap="Tip4_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Get inside their heads" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Find out as much as you can about the people with whom you will be negotiating and how they see the situation." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip5" Tap="Tip5_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Aim high" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Negotiators who set higher targets do better and women typically set unnecessarily low targets—and get less as a result." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip6" Tap="Tip6_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Ask for more than you want" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Negotiation typically involves a back-and forth discussion. Leave yourself enough wiggle room between what you ask for and what you want so that you can make some concessions and still achieve your target." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip7" Tap="Tip7_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Pay attention to how you ask" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="People often push back when a woman takes an approach that seems too aggressive." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip8" Tap="Tip8_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Time it right" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Some times of the year are better than others to ask for a raise." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip9" Tap="Tip9_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Practice, practice, practice" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Many women feel anxious about negotiating; rehearsing ahead of time can help calm your nerves." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+                <StackPanel Margin="0,0,0,17" Orientation="Vertical" Name="Tip10" Tap="Tip10_Tap" >
+                    <StackPanel Margin="0,0,0,17" Background="ForestGreen" Orientation="Horizontal">
+                            <Image Source="/AllAreEqual;component/Images/light.png" Height="60"></Image>
+                            <TextBlock Text="Get yourself psyched up" TextWrapping="NoWrap" Style="{StaticResource PhoneTextExtraLargeStyle}" FontFamily="Segoe WP Light" />
+                    </StackPanel>
+                        <TextBlock Text="Positive moods are contagious and stimulate greater cooperation and creativity." TextWrapping="NoWrap" Margin="12,-6,12,0" Style="{StaticResource PhoneTextSubtleStyle}"/>
+                </StackPanel>
+            </StackPanel>
+            </ScrollViewer>
+        </Grid>
+    </Grid>
+ 
+    <!--Sample code showing usage of ApplicationBar-->
+    <!--<phone:PhoneApplicationPage.ApplicationBar>
+        <shell:ApplicationBar IsVisible="True" IsMenuEnabled="True">
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button1.png" Text="Button 1"/>
+            <shell:ApplicationBarIconButton IconUri="/Images/appbar_button2.png" Text="Button 2"/>
+            <shell:ApplicationBar.MenuItems>
+                <shell:ApplicationBarMenuItem Text="MenuItem 1"/>
+                <shell:ApplicationBarMenuItem Text="MenuItem 2"/>
+            </shell:ApplicationBar.MenuItems>
+        </shell:ApplicationBar>
+    </phone:PhoneApplicationPage.ApplicationBar>-->
+
+</phone:PhoneApplicationPage>
